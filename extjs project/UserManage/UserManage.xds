@@ -1,0 +1,59 @@
+{
+    "name": "UserManage",
+    "settings": {},
+    "xdsVersion": "2.2.2",
+    "xdsBuild": 991,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000503,
+    "framework": "ext42",
+    "topInstanceFileMap": {
+        "f5ae4fed-a2fb-4850-97d2-3dadbc078d5d": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "c143f1d4-9261-4ca6-8b2a-15675904aeb8": {
+            "paths": [
+                "metadata/store/UserGridStore",
+                "app/store/override/UserGridStore.js",
+                "app/store/UserGridStore.js"
+            ],
+            "className": "UserGridStore"
+        },
+        "b21501c4-f390-4292-8aa4-2f954622c422": {
+            "paths": [
+                "metadata/view/UserManageView",
+                "app/view/override/UserManageView.js",
+                "app/view/UserManageView.js"
+            ],
+            "className": "UserManageView"
+        },
+        "4265ffa9-ac26-4bef-bc8b-afc563f6d082": {
+            "paths": [
+                "metadata/model/UserModel",
+                "app/model/override/UserModel.js",
+                "app/model/UserModel.js"
+            ],
+            "className": "UserModel"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "b21501c4-f390-4292-8aa4-2f954622c422"
+        ],
+        "store": [
+            "c143f1d4-9261-4ca6-8b2a-15675904aeb8"
+        ],
+        "controller": [],
+        "model": [
+            "4265ffa9-ac26-4bef-bc8b-afc563f6d082"
+        ],
+        "resource": [
+            "f5ae4fed-a2fb-4850-97d2-3dadbc078d5d"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

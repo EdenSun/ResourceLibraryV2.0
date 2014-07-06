@@ -1,0 +1,40 @@
+{
+    "name": "AdminFramework",
+    "settings": {},
+    "xdsVersion": "2.2.2",
+    "xdsBuild": 991,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000503,
+    "framework": "ext42",
+    "topInstanceFileMap": {
+        "eb24a778-b459-4b6f-ab96-81e3a6af8444": {
+            "paths": [
+                "metadata/view/MyViewport",
+                "app/view/override/MyViewport.js",
+                "app/view/MyViewport.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "MyViewport"
+        },
+        "12e2a22f-1d74-4d92-91c9-4a2a41455cc4": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "eb24a778-b459-4b6f-ab96-81e3a6af8444"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "12e2a22f-1d74-4d92-91c9-4a2a41455cc4"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

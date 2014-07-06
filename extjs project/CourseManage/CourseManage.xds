@@ -1,0 +1,50 @@
+{
+    "name": "CourseManage",
+    "settings": {},
+    "xdsVersion": "2.2.2",
+    "xdsBuild": 991,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000503,
+    "framework": "ext42",
+    "topInstanceFileMap": {
+        "f1160261-ece3-4dbb-bb41-1ce8f88f4beb": {
+            "paths": [
+                "metadata/view/CourseManageView",
+                "app/view/override/CourseManageView.js",
+                "app/view/CourseManageView.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "CourseManageView"
+        },
+        "97398fc5-593d-4bfe-a0b2-86f3e87c327d": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "3784dcb4-d81d-4c91-9880-15986dbe2a8e": {
+            "paths": [
+                "metadata/store/CourseGridStore",
+                "app/store/override/CourseGridStore.js",
+                "app/store/CourseGridStore.js"
+            ],
+            "className": "CourseGridStore"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "f1160261-ece3-4dbb-bb41-1ce8f88f4beb"
+        ],
+        "store": [
+            "3784dcb4-d81d-4c91-9880-15986dbe2a8e"
+        ],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "97398fc5-593d-4bfe-a0b2-86f3e87c327d"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

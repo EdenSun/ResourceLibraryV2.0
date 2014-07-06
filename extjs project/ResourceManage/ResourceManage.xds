@@ -1,0 +1,50 @@
+{
+    "name": "ResourceManage",
+    "settings": {},
+    "xdsVersion": "2.2.2",
+    "xdsBuild": 991,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000503,
+    "framework": "ext42",
+    "topInstanceFileMap": {
+        "3b0aa3d3-f704-4440-ad71-7bf4d38e645e": {
+            "paths": [
+                "metadata/view/ResManageView",
+                "app/view/override/ResManageView.js",
+                "app/view/ResManageView.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "ResManageView"
+        },
+        "957159e9-591a-43e9-903c-d6fb530bb3e2": {
+            "paths": [
+                "metadata/store/ResGridStore",
+                "app/store/override/ResGridStore.js",
+                "app/store/ResGridStore.js"
+            ],
+            "className": "ResGridStore"
+        },
+        "d492b4c6-0ec1-4bf7-98f7-f405aad364a9": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "3b0aa3d3-f704-4440-ad71-7bf4d38e645e"
+        ],
+        "store": [
+            "957159e9-591a-43e9-903c-d6fb530bb3e2"
+        ],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "d492b4c6-0ec1-4bf7-98f7-f405aad364a9"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

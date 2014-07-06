@@ -1,0 +1,40 @@
+{
+    "name": "AddElectiveCourseWindow",
+    "settings": {},
+    "xdsVersion": "2.2.2",
+    "xdsBuild": 991,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000503,
+    "framework": "ext42",
+    "topInstanceFileMap": {
+        "7f9775a8-b2b9-424a-b442-d62858c95035": {
+            "paths": [
+                "metadata/view/MyWindow",
+                "app/view/override/MyWindow.js",
+                "app/view/MyWindow.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "MyWindow"
+        },
+        "9901ca56-5450-4a02-a4d3-d250a99823d4": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "7f9775a8-b2b9-424a-b442-d62858c95035"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "9901ca56-5450-4a02-a4d3-d250a99823d4"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

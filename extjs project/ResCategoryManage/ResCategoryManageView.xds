@@ -1,0 +1,40 @@
+{
+    "name": "ResCategoryManage",
+    "settings": {},
+    "xdsVersion": "2.2.2",
+    "xdsBuild": 991,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000503,
+    "framework": "ext42",
+    "topInstanceFileMap": {
+        "6cd5040f-de92-4dd6-bf8c-4959fcc285ed": {
+            "paths": [
+                "metadata/view/MyViewport",
+                "app/view/override/MyViewport.js",
+                "app/view/MyViewport.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "MyViewport"
+        },
+        "b0ba854d-2bf7-4fa7-ae71-99a3ff3bf3d1": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "6cd5040f-de92-4dd6-bf8c-4959fcc285ed"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "b0ba854d-2bf7-4fa7-ae71-99a3ff3bf3d1"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

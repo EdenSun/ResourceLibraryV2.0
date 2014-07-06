@@ -1,0 +1,49 @@
+{
+    "name": "ElectiveCourseManage",
+    "settings": {},
+    "xdsVersion": "2.2.2",
+    "xdsBuild": 991,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000503,
+    "framework": "ext42",
+    "topInstanceFileMap": {
+        "02ec6b61-1364-46ae-8a5c-e809b380e48d": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "a959f43d-f894-4897-b5d0-8d298c883629": {
+            "paths": [
+                "metadata/store/ElectiveCourseGridStore",
+                "app/store/override/ElectiveCourseGridStore.js",
+                "app/store/ElectiveCourseGridStore.js"
+            ],
+            "className": "ElectiveCourseGridStore"
+        },
+        "dbc7c480-b5ff-4f74-8e94-cf373689db6a": {
+            "paths": [
+                "metadata/view/ElectiveCourseManageView",
+                "app/view/override/ElectiveCourseManageView.js",
+                "app/view/ElectiveCourseManageView.js"
+            ],
+            "className": "ElectiveCourseManageView"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "dbc7c480-b5ff-4f74-8e94-cf373689db6a"
+        ],
+        "store": [
+            "a959f43d-f894-4897-b5d0-8d298c883629"
+        ],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "02ec6b61-1364-46ae-8a5c-e809b380e48d"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

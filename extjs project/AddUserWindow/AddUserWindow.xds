@@ -1,0 +1,40 @@
+{
+    "name": "AddUserWindow",
+    "settings": {},
+    "xdsVersion": "2.2.2",
+    "xdsBuild": 991,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000503,
+    "framework": "ext42",
+    "topInstanceFileMap": {
+        "74ec105e-ab9a-40f5-b548-973b146e699b": {
+            "paths": [
+                "metadata/view/AddUserWin",
+                "app/view/override/AddUserWin.js",
+                "app/view/AddUserWin.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "AddUserWin"
+        },
+        "bb004b8e-8fd8-4dcf-93f2-c070d3858e79": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "74ec105e-ab9a-40f5-b548-973b146e699b"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "bb004b8e-8fd8-4dcf-93f2-c070d3858e79"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}
