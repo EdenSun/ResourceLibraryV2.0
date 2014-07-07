@@ -1,0 +1,17 @@
+{
+	data: { 
+		id:1, 
+		account: 'user-1',
+		realName: 'realName-1',	
+		sex:'男',
+		password:'111111',
+		email:'xinem@126.com',
+		role:'学生',
+		stuNo:'060174',
+		startYear:'2013',
+		mobilePhone:'14782394091',
+		createTime: '2014-10-23 12:30:00'
+	},
+	success: true,
+	msg: 'success'
+}

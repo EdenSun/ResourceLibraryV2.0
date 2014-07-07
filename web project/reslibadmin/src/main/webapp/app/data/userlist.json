@@ -1,0 +1,18 @@
+{
+	data:{
+		users: [{ id:1, account: 'user-1',realName: 'realName-1',sex:'男',password:'111111',email:'xinem@126.com',role:'学生',stuNo:'060174',startYear:'2013',mobilePhone:'14782394091'},
+		{ id:2, account: 'user-1',realName: 'realName-1',sex:'男',password:'111111',email:'xinem@126.com',role:'学生',stuNo:'060174',startYear:'2013',mobilePhone:'14782394091'},
+		{ id:3, account: 'user-1',realName: 'realName-1',sex:'男',password:'111111',email:'xinem@126.com',role:'学生',stuNo:'060174',startYear:'2013',mobilePhone:'14782394091'},
+		{ id:4, account: 'user-1',realName: 'realName-1',sex:'男',password:'111111',email:'xinem@126.com',role:'学生',stuNo:'060174',startYear:'2013',mobilePhone:'14782394091'},
+		{ id:5, account: 'user-1',realName: 'realName-1',sex:'男',password:'111111',email:'xinem@126.com',role:'学生',stuNo:'060174',startYear:'2013',mobilePhone:'14782394091'},
+		{ id:6, account: 'user-1',realName: 'realName-1',sex:'男',password:'111111',email:'xinem@126.com',role:'学生',stuNo:'060174',startYear:'2013',mobilePhone:'14782394091'}],
+		pager:{
+			page:1,
+			pageSize:10,
+			totalCount:6
+		}
+	},
+	
+	success: true,
+	msg: 'success'
+}
