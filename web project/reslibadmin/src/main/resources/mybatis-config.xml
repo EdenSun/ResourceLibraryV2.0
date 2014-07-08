@@ -8,8 +8,8 @@
 		
 	</typeAliases>
 	<mappers>
-	    <!-- 
-		<mapper resource="com/uce360/advertiseweb/persistence/CouponAreaMapper.xml" /> -->
+	    
+		<!-- <mapper resource="com/uce360/reslibadmin/mapper/UserMapper.xml" /> -->
 		
 	</mappers>
 </configuration>   

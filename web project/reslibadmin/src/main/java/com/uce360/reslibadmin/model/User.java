@@ -2,6 +2,9 @@ package com.uce360.reslibadmin.model;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class User {
     private Integer id;
 
