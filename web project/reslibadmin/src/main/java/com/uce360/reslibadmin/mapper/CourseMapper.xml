@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.uce360.reslibadmin.dao.CourseMapper" >
+  <resultMap id="BaseResultMap" type="com.uce360.reslibadmin.model.Course" >
+    <id column="ID" property="id" jdbcType="INTEGER" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="CREATOR_ID" property="creatorId" jdbcType="INTEGER" />
+    <result column="CATEGORY_ID" property="categoryId" jdbcType="INTEGER" />
+    <result column="COURSE_TIME" property="courseTime" jdbcType="REAL" />
+    <result column="COURSE_CREDIT" property="courseCredit" jdbcType="REAL" />
+    <result column="IS_SHOW_ON_HOMEPAGE" property="isShowOnHomepage" jdbcType="TINYINT" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="IS_DELETE" property="isDelete" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.uce360.reslibadmin.model.Course" extends="BaseResultMap" >
+    <result column="DESCRIPTION" property="description" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, NAME, CREATOR_ID, CATEGORY_ID, COURSE_TIME, COURSE_CREDIT, IS_SHOW_ON_HOMEPAGE, 
+    CREATE_TIME, IS_DELETE
+  </sql>
+  <sql id="Blob_Column_List" >
+    DESCRIPTION
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.uce360.reslibadmin.model.CourseExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from TBL_COURSE
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.uce360.reslibadmin.model.CourseExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from TBL_COURSE
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from TBL_COURSE
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from TBL_COURSE
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.uce360.reslibadmin.model.CourseExample" >
+    delete from TBL_COURSE
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.uce360.reslibadmin.model.Course" >
+    insert into TBL_COURSE (ID, NAME, CREATOR_ID, 
+      CATEGORY_ID, COURSE_TIME, COURSE_CREDIT, 
+      IS_SHOW_ON_HOMEPAGE, CREATE_TIME, IS_DELETE, 
+      DESCRIPTION)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{creatorId,jdbcType=INTEGER}, 
+      #{categoryId,jdbcType=INTEGER}, #{courseTime,jdbcType=REAL}, #{courseCredit,jdbcType=REAL}, 
+      #{isShowOnHomepage,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{isDelete,jdbcType=INTEGER}, 
+      #{description,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.uce360.reslibadmin.model.Course" >
+    insert into TBL_COURSE
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="creatorId != null" >
+        CREATOR_ID,
+      </if>
+      <if test="categoryId != null" >
+        CATEGORY_ID,
+      </if>
+      <if test="courseTime != null" >
+        COURSE_TIME,
+      </if>
+      <if test="courseCredit != null" >
+        COURSE_CREDIT,
+      </if>
+      <if test="isShowOnHomepage != null" >
+        IS_SHOW_ON_HOMEPAGE,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="isDelete != null" >
+        IS_DELETE,
+      </if>
+      <if test="description != null" >
+        DESCRIPTION,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null" >
+        #{creatorId,jdbcType=INTEGER},
+      </if>
+      <if test="categoryId != null" >
+        #{categoryId,jdbcType=INTEGER},
+      </if>
+      <if test="courseTime != null" >
+        #{courseTime,jdbcType=REAL},
+      </if>
+      <if test="courseCredit != null" >
+        #{courseCredit,jdbcType=REAL},
+      </if>
+      <if test="isShowOnHomepage != null" >
+        #{isShowOnHomepage,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null" >
+        #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.uce360.reslibadmin.model.CourseExample" resultType="java.lang.Integer" >
+    select count(*) from TBL_COURSE
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update TBL_COURSE
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null" >
+        NAME = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.creatorId != null" >
+        CREATOR_ID = #{record.creatorId,jdbcType=INTEGER},
+      </if>
+      <if test="record.categoryId != null" >
+        CATEGORY_ID = #{record.categoryId,jdbcType=INTEGER},
+      </if>
+      <if test="record.courseTime != null" >
+        COURSE_TIME = #{record.courseTime,jdbcType=REAL},
+      </if>
+      <if test="record.courseCredit != null" >
+        COURSE_CREDIT = #{record.courseCredit,jdbcType=REAL},
+      </if>
+      <if test="record.isShowOnHomepage != null" >
+        IS_SHOW_ON_HOMEPAGE = #{record.isShowOnHomepage,jdbcType=TINYINT},
+      </if>
+      <if test="record.createTime != null" >
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.isDelete != null" >
+        IS_DELETE = #{record.isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="record.description != null" >
+        DESCRIPTION = #{record.description,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update TBL_COURSE
+    set ID = #{record.id,jdbcType=INTEGER},
+      NAME = #{record.name,jdbcType=VARCHAR},
+      CREATOR_ID = #{record.creatorId,jdbcType=INTEGER},
+      CATEGORY_ID = #{record.categoryId,jdbcType=INTEGER},
+      COURSE_TIME = #{record.courseTime,jdbcType=REAL},
+      COURSE_CREDIT = #{record.courseCredit,jdbcType=REAL},
+      IS_SHOW_ON_HOMEPAGE = #{record.isShowOnHomepage,jdbcType=TINYINT},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      IS_DELETE = #{record.isDelete,jdbcType=INTEGER},
+      DESCRIPTION = #{record.description,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update TBL_COURSE
+    set ID = #{record.id,jdbcType=INTEGER},
+      NAME = #{record.name,jdbcType=VARCHAR},
+      CREATOR_ID = #{record.creatorId,jdbcType=INTEGER},
+      CATEGORY_ID = #{record.categoryId,jdbcType=INTEGER},
+      COURSE_TIME = #{record.courseTime,jdbcType=REAL},
+      COURSE_CREDIT = #{record.courseCredit,jdbcType=REAL},
+      IS_SHOW_ON_HOMEPAGE = #{record.isShowOnHomepage,jdbcType=TINYINT},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      IS_DELETE = #{record.isDelete,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uce360.reslibadmin.model.Course" >
+    update TBL_COURSE
+    <set >
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null" >
+        CREATOR_ID = #{creatorId,jdbcType=INTEGER},
+      </if>
+      <if test="categoryId != null" >
+        CATEGORY_ID = #{categoryId,jdbcType=INTEGER},
+      </if>
+      <if test="courseTime != null" >
+        COURSE_TIME = #{courseTime,jdbcType=REAL},
+      </if>
+      <if test="courseCredit != null" >
+        COURSE_CREDIT = #{courseCredit,jdbcType=REAL},
+      </if>
+      <if test="isShowOnHomepage != null" >
+        IS_SHOW_ON_HOMEPAGE = #{isShowOnHomepage,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null" >
+        IS_DELETE = #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="description != null" >
+        DESCRIPTION = #{description,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.uce360.reslibadmin.model.Course" >
+    update TBL_COURSE
+    set NAME = #{name,jdbcType=VARCHAR},
+      CREATOR_ID = #{creatorId,jdbcType=INTEGER},
+      CATEGORY_ID = #{categoryId,jdbcType=INTEGER},
+      COURSE_TIME = #{courseTime,jdbcType=REAL},
+      COURSE_CREDIT = #{courseCredit,jdbcType=REAL},
+      IS_SHOW_ON_HOMEPAGE = #{isShowOnHomepage,jdbcType=TINYINT},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      IS_DELETE = #{isDelete,jdbcType=INTEGER},
+      DESCRIPTION = #{description,jdbcType=LONGVARCHAR}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.uce360.reslibadmin.model.Course" >
+    update TBL_COURSE
+    set NAME = #{name,jdbcType=VARCHAR},
+      CREATOR_ID = #{creatorId,jdbcType=INTEGER},
+      CATEGORY_ID = #{categoryId,jdbcType=INTEGER},
+      COURSE_TIME = #{courseTime,jdbcType=REAL},
+      COURSE_CREDIT = #{courseCredit,jdbcType=REAL},
+      IS_SHOW_ON_HOMEPAGE = #{isShowOnHomepage,jdbcType=TINYINT},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      IS_DELETE = #{isDelete,jdbcType=INTEGER}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <select resultMap="ResultMapWithBLOBs" parameterType="com.uce360.reslibadmin.model.CourseExample" id="selectByExampleWithBLOBsWithRowbounds" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from TBL_COURSE
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select resultMap="BaseResultMap" parameterType="com.uce360.reslibadmin.model.CourseExample" id="selectByExampleWithRowbounds" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from TBL_COURSE
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+</mapper>
