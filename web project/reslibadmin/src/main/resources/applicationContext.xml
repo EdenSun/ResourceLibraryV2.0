@@ -14,7 +14,7 @@
         http://www.springframework.org/schema/mvc 
         http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 	<context:component-scan base-package="com.uce360.reslibadmin" />
-	<mvc:annotation-driven />
+	<mvc:annotation-driven />	
 
 	<bean id="propertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -28,8 +28,7 @@
 
 	<!-- c3p0 datasource -->
 	<bean id="dataSource" 
-		class="com.mchange.v2.c3p0.ComboPooledDataSource"
-		>
+		class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<property name="driverClass" value="${db.driver}"></property>
 		<property name="jdbcUrl" value="${db.url}"></property>
 		<property name="user" value="${db.username}"></property>
@@ -48,9 +47,9 @@
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage"
-			value="com.uce360.reslibadmin.mapper" />
+			value="com.uce360.reslibadmin.dao" />
 	</bean>
-
+	
 	<!--事务管理器 -->
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
@@ -59,7 +58,6 @@
 
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
-		
 			<tx:method name="get*" read-only="true" propagation="REQUIRED" />
 			<tx:method name="list*" read-only="true" propagation="REQUIRED" />
 			<tx:method name="*" read-only="true" propagation="REQUIRED" />

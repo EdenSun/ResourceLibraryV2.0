@@ -9,7 +9,7 @@
 	</typeAliases>
 	<mappers>
 	    
-		<!-- <mapper resource="com/uce360/reslibadmin/mapper/UserMapper.xml" /> -->
-		
+		<mapper resource="com/uce360/reslibadmin/dao/mapper/UserMapper.xml" />
+	
 	</mappers>
 </configuration>   
