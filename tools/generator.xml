@@ -34,7 +34,7 @@
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 		<!--生成SQLMAP文件 -->
-		<sqlMapGenerator targetPackage="com.uce360.reslibadmin.mapper"
+		<sqlMapGenerator targetPackage="com.uce360.reslibadmin.dao.mapper"
 			targetProject=".">
 			<property name="enableSubPackages" value="false" />
 		</sqlMapGenerator>
