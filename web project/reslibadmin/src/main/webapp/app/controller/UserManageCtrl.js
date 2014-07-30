@@ -23,7 +23,17 @@ Ext.define('RLM.controller.UserManageCtrl',{
 		this.control('#addUserWin button[action="okAction"]',{
 			click: function(){
 				var addUserWin = Ext.getCmp('addUserWin');
+				var addUserForm = Ext.getCmp('addUserForm');
 				
+				addUserForm.getForm().submit({
+					url: 'um/addUser.do',
+					success: function(){
+					},
+					failure: function(){
+					}
+				});
+				
+				alert('ok');
 				addUserWin.hide();
 			}
 		});
@@ -79,6 +89,9 @@ Ext.define('RLM.controller.UserManageCtrl',{
 			click: function(){
 				var editUserWin = Ext.getCmp('editUserWin');
 				
+				editUserWin.submit({
+					url: 'addUser.do'
+				});
 				editUserWin.hide();
 			}
 		});

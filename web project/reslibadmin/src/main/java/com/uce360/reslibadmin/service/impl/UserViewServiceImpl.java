@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.uce360.reslibadmin.dto.PagerViewDTO;
 import com.uce360.reslibadmin.dto.ViewDTO;
 import com.uce360.reslibadmin.dto.param.PagerParamDTO;
+import com.uce360.reslibadmin.dto.param.UserAddParamDTO;
 import com.uce360.reslibadmin.dto.view.user.UserListViewDTO;
 import com.uce360.reslibadmin.dto.view.user.UserViewDTO;
 import com.uce360.reslibadmin.exception.ServiceException;
@@ -74,6 +75,30 @@ public class UserViewServiceImpl implements IUserViewService {
 		dto.setSex( UserUtil.getViewSex(user.getSex()) );
 		dto.setCreateTime(DateUtil.format(user.getCreateTime(),DateUtil.YMDHMM));
 		return dto;
+	}
+
+	public ViewDTO<Boolean> addUser(UserAddParamDTO userDTO)
+			throws ServiceException {
+		ViewDTO<Boolean> view = new ViewDTO<Boolean>();
+		
+		try {
+			User user = trans2User(userDTO);
+			
+			userService.addUser(user);
+			
+			view.setData(true);
+		} catch (Exception e) {
+			view.setData(false);
+			view.setMsg("添加用户失败.");
+		}
+		return view;
+	}
+
+	private User trans2User(UserAddParamDTO userDTO) {
+		User user = new User();
+		BeanUtils.copyProperties(userDTO, user);
+		
+		return user;
 	}
 	
 }

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.uce360.reslibadmin.dto.ViewDTO;
 import com.uce360.reslibadmin.dto.param.PagerParamDTO;
+import com.uce360.reslibadmin.dto.param.UserAddParamDTO;
 import com.uce360.reslibadmin.dto.view.user.UserListViewDTO;
 import com.uce360.reslibadmin.service.IUserViewService;
 
@@ -18,10 +19,20 @@ public class UserManageController {
 	@Autowired
 	private IUserViewService userViewService;
 	
-	@RequestMapping("/page-user")
+	@RequestMapping("/pageUser")
 	@ResponseBody
 	public ViewDTO<UserListViewDTO> pageUser(@ModelAttribute("pager")PagerParamDTO pager){
 		ViewDTO<UserListViewDTO> view = userViewService.pageUser(pager);
+		
+		return view;
+	}
+	
+	
+	@RequestMapping("/addUser")
+	@ResponseBody
+	public ViewDTO<Boolean> addUser(
+			@ModelAttribute("user")UserAddParamDTO user){
+		ViewDTO<Boolean> view = userViewService.addUser(user);
 		
 		return view;
 	}

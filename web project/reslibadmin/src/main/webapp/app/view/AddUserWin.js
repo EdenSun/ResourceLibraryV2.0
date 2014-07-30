@@ -42,34 +42,40 @@ Ext.define('RLM.view.AddUserWin', {
             items: [
                 {
                     xtype: 'form',
+                    id:'addUserForm',
                     bodyPadding: 10,
                     items: [
                         {
                             xtype: 'textfield',
+                            name: 'account',
                             anchor: '100%',
                             fieldLabel: '帐号',
                             labelWidth: 60
                         },
                         {
                             xtype: 'textfield',
+                            name: 'realname',
                             anchor: '100%',
                             fieldLabel: '真名',
                             labelWidth: 60
                         },
                         {
                             xtype: 'textfield',
+                            name: 'password',
                             anchor: '100%',
                             fieldLabel: '密码',
                             labelWidth: 60
                         },
                         {
                             xtype: 'textfield',
+                            name: 'email',
                             anchor: '100%',
                             fieldLabel: '邮箱',
                             labelWidth: 60
                         },
                         {
                             xtype: 'textfield',
+                            name: 'mobilePhone',
                             anchor: '100%',
                             fieldLabel: '电话',
                             labelWidth: 60
@@ -84,10 +90,14 @@ Ext.define('RLM.view.AddUserWin', {
                             items: [
                                 {
                                     xtype: 'radiofield',
+                                    name: 'sex',
+                                    inputValue: 1,
                                     boxLabel: '男'
                                 },
                                 {
                                     xtype: 'radiofield',
+                                    name: 'sex',
+                                    inputValue: 2,
                                     margins: '0 0 0 25px',
                                     boxLabel: '女'
                                 }
@@ -103,26 +113,34 @@ Ext.define('RLM.view.AddUserWin', {
                                     items: [
                                         {
                                             xtype: 'radiofield',
+                                            name: 'roleType',
+                                            inputValue: 2,
                                             boxLabel: '学生'
                                         },
                                         {
                                             xtype: 'radiofield',
+                                            name: 'roleType',
+                                            inputValue: 3,
                                             boxLabel: '教师'
                                         },
                                         {
                                             xtype: 'radiofield',
+                                            name: 'roleType',
+                                            inputValue: 1,
                                             boxLabel: '管理员'
                                         }
                                     ]
                                 },
                                 {
                                     xtype: 'textfield',
+                                    name: 'studentId',
                                     anchor: '100%',
                                     fieldLabel: '学号',
                                     labelWidth: 60
                                 },
                                 {
                                     xtype: 'combobox',
+                                    name: 'startYear',
                                     anchor: '100%',
                                     fieldLabel: '入学年份',
                                     labelWidth: 60
