@@ -20,6 +20,12 @@ Ext.define('RLM.controller.UserManageCtrl',{
 			}
 		});
 		
+		this.control('#UserManageModule button[action="delUserAction"]',{
+			click: function(){
+				alert('del user');
+			}
+		});
+		
 		this.control('#addUserWin button[action="okAction"]',{
 			click: function(){
 				var addUserWin = Ext.getCmp('addUserWin');

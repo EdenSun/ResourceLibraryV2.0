@@ -151,24 +151,24 @@ Ext.define('RLM.view.UserManageView', {
                             store: 'UserGridStore'
                         },
                         {
-		                    xtype: 'toolbar',
-		                    dock: 'top',
-		                    items: [
-		                        {
-		                            xtype: 'button',
-		                            action: 'addUserAction',
-		                            text: '新增'
-		                        },
-		                        {
-		                            xtype: 'tbseparator'
-		                        },
-		                        {
-		                            xtype: 'button',
-		                            action: 'delUserAction',
-		                            text: '删除'
-		                        }
-		                    ]
-		                }
+	                        xtype: 'toolbar',
+	                        dock: 'top',
+	                        items: [
+	                            {
+	                                xtype: 'button',
+	                                action: 'addUserAction',
+	                                text: '新增'
+	                            },
+	                            {
+	                                xtype: 'tbseparator'
+	                            },
+	                            {
+	                                xtype: 'button',
+	                                action: 'delUserAction',
+	                                text: '删除'
+	                            }
+	                        ]
+	                    }
                     ],
                     columns: [
                         {
